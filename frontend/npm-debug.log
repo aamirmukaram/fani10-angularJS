@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'package.json' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 verbose install initial load of /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+5 warn package.json frontend@0.0.0 No description
+6 warn package.json frontend@0.0.0 No repository field.
+7 warn package.json frontend@0.0.0 No README data
+8 warn package.json frontend@0.0.0 No license field.
+9 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+10 silly cache add args [ 'package.json', null ]
+11 verbose cache add spec package.json
+12 silly cache add parsed spec Result {
+12 silly cache add   raw: 'package.json',
+12 silly cache add   scope: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: 'package.json',
+12 silly cache add   spec: '/Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json',
+12 silly cache add   type: 'local' }
+13 silly addLocalTarball shasum (computed) 6f6321aff852089d967f8a089a2a982a62d32ce2
+14 verbose addTmpTarball /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json not in flight; adding
+15 verbose addTmpTarball validating metadata from /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+16 verbose tar unpack /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+17 verbose tar unpacking to /var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d
+18 silly gentlyRm /var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d is being purged
+19 verbose gentlyRm don't care about contents; nuking /var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d
+20 silly gunzTarPerm modes [ '755', '644' ]
+21 error not a package /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+22 error addLocal Could not install /Applications/MAMP/htdocs/fani10-angularJS/frontend/package.json
+23 verbose stack Error: ENOENT: no such file or directory, open '/var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d/package.json'
+23 verbose stack     at Error (native)
+24 verbose cwd /Applications/MAMP/htdocs/fani10-angularJS/frontend
+25 error Darwin 14.1.0
+26 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "package.json"
+27 error node v4.2.6
+28 error npm  v2.14.12
+29 error path /var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d/package.json
+30 error code ENOENT
+31 error errno -2
+32 error syscall open
+33 error enoent ENOENT: no such file or directory, open '/var/folders/r1/k771krk51kx_1106rdfz12180000gn/T/npm-6319-4d1ba36e/unpack-9863326ae98d/package.json'
+33 error enoent This is most likely not a problem with npm itself
+33 error enoent and is related to npm not being able to find a file.
+34 verbose exit [ -2, true ]
