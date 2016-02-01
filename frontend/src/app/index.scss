@@ -19,11 +19,29 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
+#main {
+  .page-header {
+    margin-top: 20px;
 
-  img.pull-right {
-    width: 50px;
+    h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+  }
+  .form-1 {
+    thead {
+      background-color: #FFF0F0;
+    }
+  }
+  .form-2 {
+    thead {
+      background-color: #D9E8FF;
+    }
+  }
+
+  hr {
+    border-top: 1px solid #000000;
   }
 }
 

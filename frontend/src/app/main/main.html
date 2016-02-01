@@ -1,34 +1,63 @@
-<div class="container">
+<div class="container" id="main">
 
-  <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  <div class="page-header row">
+    <div class="col-xs-12">
+      <h1>Bridge Form</h1>
+    </div>
+
   </div>
 
-  <div class="jumbotron text-center">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p class="animated infinite" ng-class="main.classAnimation">
-      <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-    </p>
-    <p>
-      With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-    </p>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+  <div class="header-inputs row">
+    <div class="col-xs-4">
+      <div class="date">
+        <div class="form-group">
+          <label for="inputDate">DATE</label>
+          <input type="date" class="form-control" id="inputDate" ng-model="main.formData.inputDate" placeholder="Enter date">
         </div>
       </div>
     </div>
+    <div class="col-xs-4">
+      <div class="page">
+        <div class="form-group">
+          <label for="inputPage">Page Number</label>
+          <input type="text" class="form-control" id="inputPage" ng-model="main.formData.inputPage" placeholder="Enter page number">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="shift">
+        <div class="form-group">
+          <label for="inputShift">Shift</label>
+          <input type="text" class="form-control" id="inputShift" ng-model="main.formData.inputShift" placeholder="Enter shift">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-1 row">
+    <div class="col-xs-12"><bridge-form></bridge-form></div>
+
+  </div>
+  <hr>
+  <div class="form-2 row">
+    <div class="col-xs-12"><bridge-form></bridge-form></div>
+  </div>
+
+  <div class="bottom-btn row">
+    <div class="col-xs-6">
+      <button type="button" id="reportBtn" class="btn btn-primary">
+        <span class="glyphicon glyphicon glyphicon-file"></span>
+        Get report
+      </button>
+    </div>
+    <div class="col-xs-1 col-xs-offset-5">
+      <button type="button" id="submitBtn" class="btn btn-primary">
+        <span class="glyphicon glyphicon-ok-circle"></span>
+        Submit
+      </button>
+    </div>
+
   </div>
 
 </div>

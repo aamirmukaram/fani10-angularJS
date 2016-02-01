@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('frontend')
+    .module('yoAngular')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 
