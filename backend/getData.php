@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');  
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -12,17 +13,19 @@ if ($conn->connect_error) {
 } 
 
 
-$inputDate=$_GET["date"];
+
 $send= array();
-$sql = "SELECT * from `bridgeTable` where `date`='".$inputDate."'";
+$obj          = new stdClass();
+$sql = "SELECT * from `bridgeTable`";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $send[]=$row;
     }
-    echo json_encode($send, JSON_PRETTY_PRINT);
+    $obj->data = $send;
+    echo json_encode($obj, JSON_PRETTY_PRINT);
 } else {
-    echo "{}";
+   echo json_encode($obj, JSON_PRETTY_PRINT);
 }
 
 $conn->close();

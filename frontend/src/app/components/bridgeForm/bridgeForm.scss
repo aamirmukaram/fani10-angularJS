@@ -1,8 +1,21 @@
 #bridge-form {
   table {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   margin-bottom: 10px;
 
+}
+
+
+.bridge-form-table {
+
+  td , th{
+    text-align: center;
+  }
+
+  .from-to {
+    background-color:  #ECECEC;
+    border: 1px solid #BBBBBB;
+  }
 }

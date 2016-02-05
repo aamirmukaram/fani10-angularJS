@@ -1,4 +1,4 @@
-<div class="container" id="main">
+<div class="container" id="main" ng-cloak>
 
   <div class="page-header row">
     <div class="col-xs-12">
@@ -36,23 +36,23 @@
 
 
   <div class="form-1 row">
-    <div class="col-xs-12"><bridge-form></bridge-form></div>
+    <div class="col-xs-12"><bridge-form form-data="main"></bridge-form></div>
 
   </div>
   <hr>
   <div class="form-2 row">
-    <div class="col-xs-12"><bridge-form></bridge-form></div>
+    <div class="col-xs-12"><bridge-form forms-data="main"></bridge-form></div>
   </div>
 
   <div class="bottom-btn row">
     <div class="col-xs-6">
-      <button type="button" id="reportBtn" class="btn btn-primary">
+      <a ui-sref="form-data" type="button" id="reportBtn" class="btn btn-primary">
         <span class="glyphicon glyphicon glyphicon-file"></span>
         Get report
-      </button>
+      </a>
     </div>
     <div class="col-xs-1 col-xs-offset-5">
-      <button type="button" id="submitBtn" class="btn btn-primary">
+      <button type="button" id="submitBtn" ng-click="main.submitData()" class="btn btn-primary">
         <span class="glyphicon glyphicon-ok-circle"></span>
         Submit
       </button>

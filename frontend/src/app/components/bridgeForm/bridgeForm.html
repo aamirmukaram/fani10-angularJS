@@ -13,28 +13,32 @@
       <tbody>
       <tr>
         <td>
-          <div uib-dropdown>
-            <button id="jigValue" type="button" class="btn btn-default" uib-dropdown-toggle>
-              1 <span class="caret"></span>
-            </button>
-            <ul uib-dropdown-menu role="menu" aria-labelledby="jigValue">
-              <li role="menuitem"><a href="#">1</a></li>
-              <li role="menuitem"><a href="#">2</a></li>
-              <li role="menuitem"><a href="#">3</a></li>
-            </ul>
-          </div>
+          <autocomplete class="jig-autocomplete"
+                        ng-model="bridgeFormCtrl.formData.jig"
+                        click-activation="true"
+                        data="bridgeFormCtrl.jigData">
+
+          </autocomplete>
         </td>
         <td>
-          <input type="text" id="projectLotValue" class="form-control" placeholder="Project/Lot" ng-model="vm.projectLotValue"/>
+          <input type="text" id="projectLotValue" class="form-control" placeholder="Project/Lot"
+                 ng-model="bridgeFormCtrl.formData.projectLot"/>
         </td>
         <td>
-          <input type="text" id="bridgeOperator" placeholder="Bridge Operator" class="form-control" />
+          <input type="text" id="bridgeOperator" ng-model="bridgeFormCtrl.formData.bridgeOperator"
+                 placeholder="Bridge Operator" class="form-control"/>
         </td>
         <td id="startTimeCell">
-          <button type="button" id="startTime" class="btn btn-default btn-block">Start Time</button>
+          <button type="button" id="startTime" ng-disabled="!bridgeFormCtrl.startTimerOn"
+                  class="btn btn-default btn-block"
+                  ng-click="bridgeFormCtrl.startTimerBtn()">{{bridgeFormCtrl.formData.startTime}}
+          </button>
         </td>
         <td id="endTimeCell">
-          <button type="button" id="endTime" class="btn btn-default btn-block">End Time</button>
+          <button type="button" id="endTime" ng-disabled="!bridgeFormCtrl.endTimerOn"
+                  class="btn btn-default btn-block"
+                  ng-click="bridgeFormCtrl.endTimerBtn()">{{bridgeFormCtrl.formData.endTime}}
+          </button>
         </td>
       </tr>
       </tbody>
@@ -55,103 +59,40 @@
       </thead>
       <tbody>
       <td>
+        <autocomplete class="autocomplete"
+                      ng-model="bridgeFormCtrl.formData.panelValue_1"
+                      click-activation="true"
+                      data="bridgeFormCtrl.panels">
 
+        </autocomplete>
+      </td>
+      <td>
+        <input type="number" placeholder="Area" class="form-control"  ng-model="bridgeFormCtrl.formData.area_1"
+               id="area-1">
+      </td>
+      <td>
+        <autocomplete class="autocomplete"
+                      ng-model="bridgeFormCtrl.formData.panelValue_2"
+                      click-activation="true"
+                      data="bridgeFormCtrl.panels">
 
-        <div uib-dropdown>
-          <button id="panelValue-1" type="button" class="btn btn-default" uib-dropdown-toggle>
-            F101 <span class="caret"></span>
-          </button>
-          <ul uib-dropdown-menu role="menu" aria-labelledby="panelValue-1">
-            <li role="menuitem"><a href="#">F101</a></li>
-            <li role="menuitem"><a href="#">F102</a></li>
-            <li role="menuitem"><a href="#">F103</a></li>
-            <li role="menuitem"><a href="#">F104</a></li>
-            <li role="menuitem"><a href="#">F105</a></li>
-            <li role="menuitem"><a href="#">F106</a></li>
-            <li role="menuitem"><a href="#">F107</a></li>
-            <li role="menuitem"><a href="#">F108</a></li>
-            <li role="menuitem"><a href="#">F109</a></li>
-            <li role="menuitem"><a href="#">F110</a></li>
-            <li role="menuitem"><a href="#">F201</a></li>
-            <li role="menuitem"><a href="#">F202</a></li>
-            <li role="menuitem"><a href="#">F203</a></li>
-            <li role="menuitem"><a href="#">F204</a></li>
-            <li role="menuitem"><a href="#">F205</a></li>
-            <li role="menuitem"><a href="#">F206</a></li>
-            <li role="menuitem"><a href="#">F207</a></li>
-            <li role="menuitem"><a href="#">F208</a></li>
-            <li role="menuitem"><a href="#">F209</a></li>
-            <li role="menuitem"><a href="#">F210</a></li>
-          </ul>
-        </div>
+        </autocomplete>
+      </td>
+      <td>
+        <input type="number" id="area-2" ng-model="bridgeFormCtrl.formData.area_2" placeholder="Area"
+               class="form-control">
+      </td>
+      <td>
+        <autocomplete class="autocomplete"
+                      ng-model="bridgeFormCtrl.formData.panelValue_3"
+                      click-activation="true"
+                      data="bridgeFormCtrl.panels">
 
+        </autocomplete>
       </td>
       <td>
-        <input type="number" placeholder="Area" class="form-control" id="area-1">
-      </td>
-      <td>
-        <div uib-dropdown>
-          <button id="panelValue-2" type="button" class="btn btn-default" uib-dropdown-toggle>
-            F101 <span class="caret"></span>
-          </button>
-          <ul uib-dropdown-menu role="menu" aria-labelledby="panelValue-2">
-            <li role="menuitem"><a href="#">F101</a></li>
-            <li role="menuitem"><a href="#">F102</a></li>
-            <li role="menuitem"><a href="#">F103</a></li>
-            <li role="menuitem"><a href="#">F104</a></li>
-            <li role="menuitem"><a href="#">F105</a></li>
-            <li role="menuitem"><a href="#">F106</a></li>
-            <li role="menuitem"><a href="#">F107</a></li>
-            <li role="menuitem"><a href="#">F108</a></li>
-            <li role="menuitem"><a href="#">F109</a></li>
-            <li role="menuitem"><a href="#">F110</a></li>
-            <li role="menuitem"><a href="#">F201</a></li>
-            <li role="menuitem"><a href="#">F202</a></li>
-            <li role="menuitem"><a href="#">F203</a></li>
-            <li role="menuitem"><a href="#">F204</a></li>
-            <li role="menuitem"><a href="#">F205</a></li>
-            <li role="menuitem"><a href="#">F206</a></li>
-            <li role="menuitem"><a href="#">F207</a></li>
-            <li role="menuitem"><a href="#">F208</a></li>
-            <li role="menuitem"><a href="#">F209</a></li>
-            <li role="menuitem"><a href="#">F210</a></li>
-          </ul>
-        </div>
-      </td>
-      <td>
-        <input type="number" id="area-2" placeholder="Area" class="form-control">
-      </td>
-      <td>
-        <div uib-dropdown>
-          <button id="panelValue-3" type="button" class="btn btn-default" uib-dropdown-toggle>
-            F101 <span class="caret"></span>
-          </button>
-          <ul uib-dropdown-menu role="menu" aria-labelledby="panelValue-3">
-            <li role="menuitem"><a href="#">F101</a></li>
-            <li role="menuitem"><a href="#">F102</a></li>
-            <li role="menuitem"><a href="#">F103</a></li>
-            <li role="menuitem"><a href="#">F104</a></li>
-            <li role="menuitem"><a href="#">F105</a></li>
-            <li role="menuitem"><a href="#">F106</a></li>
-            <li role="menuitem"><a href="#">F107</a></li>
-            <li role="menuitem"><a href="#">F108</a></li>
-            <li role="menuitem"><a href="#">F109</a></li>
-            <li role="menuitem"><a href="#">F110</a></li>
-            <li role="menuitem"><a href="#">F201</a></li>
-            <li role="menuitem"><a href="#">F202</a></li>
-            <li role="menuitem"><a href="#">F203</a></li>
-            <li role="menuitem"><a href="#">F204</a></li>
-            <li role="menuitem"><a href="#">F205</a></li>
-            <li role="menuitem"><a href="#">F206</a></li>
-            <li role="menuitem"><a href="#">F207</a></li>
-            <li role="menuitem"><a href="#">F208</a></li>
-            <li role="menuitem"><a href="#">F209</a></li>
-            <li role="menuitem"><a href="#">F210</a></li>
-          </ul>
-        </div>
-      </td>
-      <td>
-        <input type="number" id="area-3" placeholder="Area" class="form-control">
+        <input type="number" id="area-3" placeholder="Area" ng-model="bridgeFormCtrl.formData.area_3"
+               class="form-control">
       </td>
       </tbody>
     </table>

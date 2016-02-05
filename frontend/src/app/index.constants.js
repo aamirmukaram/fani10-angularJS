@@ -4,7 +4,6 @@
 
   angular
     .module('yoAngular')
-    .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant();
 
 })();
