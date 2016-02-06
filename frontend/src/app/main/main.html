@@ -1,4 +1,4 @@
-<div class="container" id="main" ng-cloak>
+<div class="container" id="main">
 
   <div class="page-header row">
     <div class="col-xs-12">
@@ -46,10 +46,10 @@
 
   <div class="bottom-btn row">
     <div class="col-xs-6">
-      <a ui-sref="form-data" type="button" id="reportBtn" class="btn btn-primary">
+      <button type="button" ng-click="main.getReportBtn()" id="reportBtn" class="btn btn-primary">
         <span class="glyphicon glyphicon glyphicon-file"></span>
         Get report
-      </a>
+      </button>
     </div>
     <div class="col-xs-1 col-xs-offset-5">
       <button type="button" id="submitBtn" ng-click="main.submitData()" class="btn btn-primary">

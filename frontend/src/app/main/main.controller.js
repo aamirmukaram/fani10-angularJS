@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope,bridgeFormFactory,toastr) {
+  function MainController($scope,bridgeFormFactory,toastr,$templateCache,$state) {
     var vm = this;
     var init = function () {
       vm.formData = {
@@ -16,6 +16,10 @@
         'formsData': {}
       }
     };
+
+    console.log('app/main/main.html',$templateCache.get('app/main/main.html'));
+    console.log('app/components/bridgeForm/bridgeFormTable.html',$templateCache.get('app/components/bridgeForm/bridgeFormTable.html'));
+    console.log('app/components/bridgeForm/directive/bridgeForm.html',$templateCache.get('app/components/bridgeForm/directive/bridgeForm.html'));
     vm.submitData = function () {
       $scope.$broadcast('submit-form');
     };
@@ -28,6 +32,14 @@
         toastr.success('Your data has been saved', 'Success');
       });
     });
+
+    vm.getReportBtn = function () {
+      console.log('app/main/main.html',$templateCache.get('app/main/main.html'));
+      console.log('app/components/bridgeForm/bridgeFormTable.html',$templateCache.get('app/components/bridgeForm/bridgeFormTable.html'));
+      console.log('app/components/bridgeForm/directive/bridgeForm.html',$templateCache.get('app/components/bridgeForm/directive/bridgeForm.html'));
+      $state.go('form');
+
+    };
 
 
     init();

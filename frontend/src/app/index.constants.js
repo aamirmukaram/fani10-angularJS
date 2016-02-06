@@ -4,6 +4,8 @@
 
   angular
     .module('yoAngular')
-    .constant();
+  .constant('serverPath','http://aamirmukaram.com/freelancingFiles/fani10/');
+
+  //.constant('serverPath','http://localhost/fani10-angularJS/');
 
 })();

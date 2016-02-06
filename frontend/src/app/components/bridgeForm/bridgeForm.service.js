@@ -6,8 +6,8 @@
     .factory('bridgeFormFactory', bridgeFormFactory);
 
   /** @ngInject */
-  function bridgeFormFactory($http, $q, toastr) {
-    var url = 'http://localhost/fani10-angularJS/backend/';
+  function bridgeFormFactory($http, $q, toastr,serverPath) {
+    var url = serverPath + 'backend/';
     var formData = [];
 
     function getFormData() {
