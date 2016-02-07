@@ -11,6 +11,7 @@
       'ngResource',
       'ui.router',
       'ui.bootstrap',
+      'angularSpinner',
       'toastr',
       'autocomplete']);
 

@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -12,21 +12,20 @@
         url: '/post-form',
         templateUrl: 'app/components/postBridgeForm/postBridgeForm.html',
         controller: 'postBridgeFormController',
-        controllerAs: 'postBridgeFormCtrl',
-        resolve: {
-          formData : function(bridgeFormFactory) {
-            return bridgeFormFactory.getFormData();
-          }
-        }
+        controllerAs: 'postBridgeFormCtrl'
       })
       .state('getForm', {
         url: '/get-form',
-        templateUrl:'app/components/getBridgeForm/getBridgeForm.html',
+        templateUrl: 'app/components/getBridgeForm/getBridgeForm.html',
         controller: 'getBridgeFormController',
         controllerAs: 'getBridgeFormCtrl',
         resolve: {
-          formData : function(bridgeFormFactory) {
-            return bridgeFormFactory.getFormData();
+          formData: function (bridgeFormFactory, usSpinnerService) {
+            usSpinnerService.spin('spinner-main');
+            return bridgeFormFactory.getFormData().then(function(){
+              usSpinnerService.stop('spinner-main');
+              return bridgeFormFactory.getFormData();
+            });
           }
         }
       });

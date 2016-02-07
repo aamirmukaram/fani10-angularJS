@@ -6,16 +6,22 @@
     .factory('bridgeFormFactory', bridgeFormFactory);
 
   /** @ngInject */
-  function bridgeFormFactory($http, $q, toastr,serverPath) {
+  function bridgeFormFactory($http, $q, toastr, serverPath) {
     var url = serverPath + 'backend/';
-    var formData = [];
+    var formData = {data: []};
 
-    function getFormData() {
+    function getFormData(doRefresh) {
       var deferred = $q.defer();
-
-      $http.get(url + 'getData.php')
-        .then(getFormDataComplete)
-        .catch(getFormDataFailed);
+      doRefresh = doRefresh || false;
+      if (doRefresh || formData.data.length === 0) {
+        $http.get(url + 'getData.php')
+          .then(getFormDataComplete)
+          .catch(getFormDataFailed);
+      }
+      else {
+        deferred.resolve(formData);
+        return deferred.promise;
+      }
 
       function getFormDataComplete(response) {
         formData = response.data;
@@ -32,8 +38,8 @@
 
     function postFormData(data) {
       var deferred = $q.defer();
-      data = {'data':data};
-      var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded'}};
+      data = {'data': data};
+      var config = {headers: {'Content-Type': 'application/x-www-form-urlencoded'}};
       $http.post(url + 'postData.php', data, config)
         .then(postFormDataComplete)
         .catch(postFormDataFailed);
