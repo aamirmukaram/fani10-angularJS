@@ -3,10 +3,10 @@
 
   angular
     .module('yoAngular')
-    .controller('bridgeFormController', bridgeFormController);
+    .controller('getBridgeFormController', getBridgeFormController);
 
   /** @ngInject */
-  function bridgeFormController(formData) {
+  function getBridgeFormController(formData) {
     var vm = this;
 
     var init = function () {

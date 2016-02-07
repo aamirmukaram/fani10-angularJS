@@ -9,7 +9,7 @@
   function bridgeForm() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/components/bridgeForm/directive/bridgeForm.html',
+      templateUrl: 'app/components/postBridgeForm/directives/bridgeForm.directive.html',
       scope: {
         'formsData': '='
       },

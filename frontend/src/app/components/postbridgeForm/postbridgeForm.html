@@ -1,0 +1,63 @@
+<div class="container" id="postBridgeForm">
+
+  <div class="page-header row">
+    <div class="col-xs-12">
+      <h1>Bridge Form</h1>
+    </div>
+
+  </div>
+
+  <div class="header-inputs row">
+    <div class="col-xs-4">
+      <div class="date">
+        <div class="form-group">
+          <label for="inputDate">DATE</label>
+          <input type="date" class="form-control" id="inputDate" ng-model="postBridgeFormCtrl.formData.inputDate" placeholder="Enter date">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="page">
+        <div class="form-group">
+          <label for="inputPage">Page Number</label>
+          <input type="text" class="form-control" id="inputPage" ng-model="postBridgeFormCtrl.formData.inputPage" placeholder="Enter page number">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="shift">
+        <div class="form-group">
+          <label for="inputShift">Shift</label>
+          <input type="text" class="form-control" id="inputShift" ng-model="postBridgeFormCtrl.formData.inputShift" placeholder="Enter shift">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-1 row">
+    <div class="col-xs-12"><bridge-form form-data="postBridgeFormCtrl"></bridge-form></div>
+
+  </div>
+  <hr>
+  <div class="form-2 row">
+    <div class="col-xs-12"><bridge-form forms-data="postBridgeFormCtrl"></bridge-form></div>
+  </div>
+
+  <div class="bottom-btn row">
+    <div class="col-xs-6">
+      <button type="button" ng-click="postBridgeFormCtrl.getReportBtn()" id="reportBtn" class="btn btn-primary">
+        <span class="glyphicon glyphicon glyphicon-file"></span>
+        Get report
+      </button>
+    </div>
+    <div class="col-xs-1 col-xs-offset-5">
+      <button type="button" id="submitBtn" ng-click="postBridgeFormCtrl.submitData()" class="btn btn-primary">
+        <span class="glyphicon glyphicon-ok-circle"></span>
+        Submit
+      </button>
+    </div>
+
+  </div>
+
+</div>
